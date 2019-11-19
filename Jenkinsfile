@@ -9,7 +9,7 @@ pipeline {
             steps {
                   echo "Starting"
                   bat label: '', script: 'mvn clean package'
-                  bat label: '', script: 'sh "docker build -t webapp:${env.BUILD_ID} ."'
+                  bat label: '', script: '"docker build -t webapp:${env.BUILD_ID} ."'
 
             }
         }
