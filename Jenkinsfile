@@ -26,7 +26,7 @@ pipeline {
         stage('Pushing-Image-to-DockerHub'){
             steps {
                 sh 'echo Pushed'
-		sh "docker push srahulgurnule/webappp:${env.BUILD_ID}"        
+		sh "docker push srahulgurnule/webapp:${env.BUILD_ID}"        
             }
         }
     }
