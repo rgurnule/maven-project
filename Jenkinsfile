@@ -5,13 +5,11 @@ pipeline {
         maven 'MAVEN_HOME'
     }
     stages{
-        stage('Build'){
+        stage('Maven-Build'){
             steps {
-                  echo "Starting"
-                  bat label: '', script: 'mvn clean package'
-                  bat label: '', script: '"docker build -t webapp:${env.BUILD_ID} ."'
-
-            }
-        }
+                 echo "Starting"
+                 sh 'mvn clean package'
+               }
+          }
     }
-}
+}   
