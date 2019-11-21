@@ -18,9 +18,9 @@ pipeline {
         }
         stage('Tagging-Docker-Image'){
             steps {
-                sh 'docker login -u srahulgurnule -p Google@123#'
-                sh "docker tag webapp:${env.BUILD_ID} srahulgurnule/webapp:${env.BUILD_ID}"
-		sh "docker push srahulgurnule/webappp:${env.BUILD_ID}"
+                sh 'docker login -u satyendrasing -p Password@123'
+                sh "docker tag webapp:${env.BUILD_ID} satyendrasing/webapp:${env.BUILD_ID}"
+		sh "docker push satyendrasing/webappp:${env.BUILD_ID}"
             }
         }
         stage('Pushing-Image-to-DockerHub'){
