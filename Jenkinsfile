@@ -22,5 +22,11 @@ pipeline {
                 sh "docker tag webapp:${env.BUILD_ID} srahulgurnule/webapp:${env.BUILD_ID}"
             }
         }
+        stage('Pushing-Image-to-DockerHub'){
+            steps {
+                sh 'echo Pushed'
+		        sh "docker push srahulgurnule/webappp:${enb.BUILD_ID}"
+            }
+        }
     }
 }   
