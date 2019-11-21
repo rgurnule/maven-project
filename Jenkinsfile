@@ -16,5 +16,11 @@ pipeline {
                 sh "docker build -t webapp:${env.BUILD_ID} ."
             }
         }
+        stage('Tagging-Docker-Image'){
+            steps {
+                sh 'docker login -u srahulgurnule -p Google@123#'
+                sh "docker tag webapp:${env.BUILD_ID} srahulgurnule/webapp:${env.BUILD_ID}"
+            }
+        }
     }
 }   
